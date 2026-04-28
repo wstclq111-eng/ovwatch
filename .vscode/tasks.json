@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Keil Build",
+            "type": "shell",
+            "command": "powershell",
+            "args": [
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "& 'D:\\keilMDKsoftware\\UV4\\UV4.exe' -b 'D:\\hal_Project\\ovwatch\\MDK-ARM\\ovwatch.uvprojx' -j0 -o 'D:\\hal_Project\\ovwatch\\keil_build_log.txt'; Get-Content 'D:\\hal_Project\\ovwatch\\keil_build_log.txt'"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

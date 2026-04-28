@@ -1,0 +1,29 @@
+{
+    "configurations": [
+        {
+            "name": "STM32F411-Keil",
+            "includePath": [
+                "D:/hal_Project/ovwatch/Core/Inc",
+                "D:/hal_Project/ovwatch/code",
+
+                "D:/hal_Project/ovwatch/Drivers/STM32F4xx_HAL_Driver/Inc",
+                "D:/hal_Project/ovwatch/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy",
+                "D:/hal_Project/ovwatch/Drivers/CMSIS/Device/ST/STM32F4xx/Include",
+                "D:/hal_Project/ovwatch/Drivers/CMSIS/Include",
+
+                "D:/keilMDKsoftware/ARM/ARM_Compiler_5.06u7/include"
+            ],
+            "defines": [
+                "USE_HAL_DRIVER",
+                "STM32F411xE",
+                "__CC_ARM",
+                "__ARMCC_VERSION=5060000"
+            ],
+            "cStandard": "c99",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": ""
+        }
+    ],
+    "version": 4
+}
