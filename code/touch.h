@@ -21,5 +21,4 @@ typedef struct
 HAL_StatusTypeDef Touch_ReadMemReg(uint8_t Memaddress,uint8_t * Data);
 HAL_StatusTypeDef  Touch_ReadMemRegs(uint8_t Memaddress, uint8_t *buf, uint16_t len);
 uint8_t Touch_Scan(CST816T_Touch_t *touch);
-uint16_t touch_Y_Change(uint16_t y);
 #endif

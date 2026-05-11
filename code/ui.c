@@ -58,8 +58,8 @@ void ui_DrawHealth(void)
 	ST7789_FillColor(LCD_BLACK);
 	
 	ST7789_ShowString(72,30,"HEALTH",FONT_SIZE_16X24,LCD_BLACK,LCD_WHITE);
-	ST7789_ShowString(50,120,"HEART:",FONT_SIZE_16X24,LCD_BLACK,LCD_WHITE);
-	ST7789_ShowString(50,160,"SPO2:",FONT_SIZE_16X24,LCD_BLACK,LCD_WHITE);
+	ST7789_ShowString(20,120,"HEART:",FONT_SIZE_16X24,LCD_BLACK,LCD_WHITE);
+	ST7789_ShowString(20,160,"SPO2:",FONT_SIZE_16X24,LCD_BLACK,LCD_WHITE);
 }
 
 /*画图界面*/
@@ -355,8 +355,29 @@ void ui_UpState(void)
 		
 		case UI_PAGE_HEALTH:
 		{
+			int hr = Get_HeartRate();
+			float spo2 = Get_SpO2();
 			
+			// 2. 格式化并显示心率
+			// 注意：我们在 "%3d BPM   " 后面多加了几个空格，是为了覆盖掉之前留下的残影
+			if(hr > 0) {
+				sprintf(buf, "%3d BPM   ", hr);
+			} else {
+				sprintf(buf, "--- BPM   "); // 没测出心率时，显示横线
+			}
+			// 你的 "HEART:" 坐标是 (50, 120)，字母宽16，大概占了100像素。
+			// 所以数值的 X 坐标从 150 开始刚好合适
+			ST7789_ShowString(120, 120, buf, FONT_SIZE_16X24, LCD_BLACK, LCD_GREEN); // 用绿色显示心率
+
+			// 3. 格式化并显示血氧
+			if(spo2 > 0.0) {
+				sprintf(buf, "%5.2f %%  ", spo2);
+			} else {
+				sprintf(buf, "--.-- %%  ");
+			}
+			ST7789_ShowString(120, 160, buf, FONT_SIZE_16X24, LCD_BLACK, LCD_CYAN); // 用青色显示血氧
 		}
+	
 		break;
 		
 		case UI_PAGE_TOUCH:

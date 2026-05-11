@@ -1022,6 +1022,41 @@
               <FileType>5</FileType>
               <FilePath>..\code\mpu6050_Reg.h</FilePath>
             </File>
+            <File>
+              <FileName>MAX30102.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\MAX30102.c</FilePath>
+            </File>
+            <File>
+              <FileName>MAX30102.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\code\MAX30102.h</FilePath>
+            </File>
+            <File>
+              <FileName>MAX30102_Reg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\code\MAX30102_Reg.h</FilePath>
+            </File>
+            <File>
+              <FileName>algorithm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\algorithm.c</FilePath>
+            </File>
+            <File>
+              <FileName>algorithm.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\code\algorithm.h</FilePath>
+            </File>
+            <File>
+              <FileName>blood.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\blood.c</FilePath>
+            </File>
+            <File>
+              <FileName>blood.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\code\blood.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

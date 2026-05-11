@@ -34,6 +34,9 @@
 "ovwatch\touch.o"
 "ovwatch\ui.o"
 "ovwatch\mpu6050.o"
+"ovwatch\max30102.o"
+"ovwatch\algorithm.o"
+"ovwatch\blood.o"
 --library_type=microlib --strict --scatter "ovwatch\ovwatch.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

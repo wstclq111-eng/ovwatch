@@ -74,6 +74,9 @@ void SY7789_RESET(void)
 	ST7789_WriteCommand(CASET);	//发送命令设置列地址集
 	ST7789_Write_ArrayData(num,4);
 	
+	y1 = y1 + 20; 
+	y2 = y2 + 20;
+	
 	num[0]=y1>>8;		 
 	num[1]=y1 & 0xFF;	
 	num[2]=y2>>8;		

@@ -1,0 +1,16 @@
+# 忽略 Keil 编译生成的临时文件
+*.o
+*.d
+*.crf
+*.htm
+*.dep
+*.lnp
+*.map
+*.lst
+*.opt
+*.uvoptx
+*.uvguix.*
+*.scvd
+Objects/
+Listings/
+DebugConfig/

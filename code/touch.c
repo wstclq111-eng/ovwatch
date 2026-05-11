@@ -43,20 +43,9 @@ uint8_t Touch_Scan(CST816T_Touch_t *touch)
     touch->x = ((uint16_t)(buf[0] & 0x0F) << 8) | buf[1];
     touch->y = ((uint16_t)(buf[2] & 0x0F) << 8) | buf[3];
 	
-	//因为触摸区间不同 将y数据映射到整个屏幕上
-	touch->y=touch_Y_Change(touch->y);
     touch->pressed = 1;
 
     return 1;
-}
-
-
-uint16_t touch_Y_Change(uint16_t y)
-{
-	
-	if(y<50)y=50;
-	if(y>278)y=278;
-	return (283-y)*283/(278-50);
 }
 
 

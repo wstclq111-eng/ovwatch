@@ -31,6 +31,8 @@
 #include "touch.h"
 #include "ui.h"
 #include "mpu6050.h"
+#include "MAX30102.h"
+#include "blood.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,6 +45,7 @@
   extern  uint32_t last_active_tick;
   extern  uint8_t screen_on;
   uint32_t last_ui_tick;
+  uint8_t FIFO_Flag=0;//æ»¡15ä¸ªè§¦å‘
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -74,6 +77,11 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	if(GPIO_Pin==TINT_Pin)
 	{
 		touch_Flag=1;
+	}
+	else if(GPIO_Pin==MINT_Pin)
+	{
+		Blood_Collect_Data_ISR();
+		printf(".\r\n");
 	}
 }
 /* USER CODE END 0 */
@@ -112,18 +120,20 @@ int main(void)
   MX_I2C1_Init();
   MX_USART1_UART_Init();
   MX_I2C2_Init();
+  MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
-	ST7789_Init();
-	MYRTC_Init();
-	ST7789_FillColor(LCD_BLACK);
-	ui_ShowPage(UI_PAGE_HOME);
-	mpu6050_Init();
+  ST7789_Init();
+  mpu6050_Init();
+  ui_ShowPage(UI_PAGE_HOME);
+	Blood_App_Init();
+  /* USER CODE END 2 */
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   { 
+	  Blood_Process_Task();
 	  
-
 	if(touch_Flag == 1)
 	{
     uint8_t event;
@@ -135,9 +145,9 @@ int main(void)
       UI_ScreenOn();
       UI_ActiveUpdate();
       continue;
-  } //Èç¹ûÆÁÄ»ÊÇ¹Ø±ÕµÄ£¬ÈÎºÎ´¥ÃþÊÂ¼þ¶¼½«±»ÊÓÎª»½ÐÑÆÁÄ»µÄÊÂ¼þ£¬»½ÐÑºóÖ±½Ó½øÈëÏÂÒ»´ÎÑ­»·£¬²»´¦ÀíÆäËûÊÂ¼þ
+  } 
 
-   UI_ActiveUpdate();//¸üÐÂ×îºó»î¶¯Ê±¼ä
+   UI_ActiveUpdate();
 
     if(ui_face == UI_PAGE_DRAW)
     {
@@ -176,7 +186,7 @@ int main(void)
             ui_UpState();
         }
 
-        // ×îºóÔÙÅÐ¶ÏÊÇ·ñ³¬Ê±Ï¢ÆÁ
+      
         if(HAL_GetTick() - last_active_tick > 10000)
         {
             UI_ScreenOff();

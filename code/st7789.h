@@ -10,7 +10,7 @@ extern RTC_TimeTypeDef sTime;
 extern RTC_DateTypeDef sData;
 
 #define ST7789_WIDTH   240
-#define ST7789_HEIGHT  284
+#define ST7789_HEIGHT  280
 
 #define SLEPP_IN    0x10
 #define SLEPP_OUT    0x11

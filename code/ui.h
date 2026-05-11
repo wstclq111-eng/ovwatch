@@ -7,6 +7,7 @@
 #include "touch.h"
 #include "stdlib.h"
 #include "mpu6050.h"
+#include "blood.h"
 typedef enum
 {
     UI_PAGE_HOME = 1,      

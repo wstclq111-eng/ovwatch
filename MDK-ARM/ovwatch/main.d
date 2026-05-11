@@ -48,3 +48,6 @@ ovwatch\main.o: ../code/ui.h
 ovwatch\main.o: D:\keilMDKsoftware\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
 ovwatch\main.o: ../code/mpu6050.h
 ovwatch\main.o: ../code/mpu6050_Reg.h
+ovwatch\main.o: ../code/blood.h
+ovwatch\main.o: ../code/MAX30102.h
+ovwatch\main.o: ../code/MAX30102_Reg.h

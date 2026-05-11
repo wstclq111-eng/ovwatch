@@ -22,19 +22,23 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 D:\hal_Project\ovwatch\MDK-ARM\ovwatch.uvprojx
-Project File Date:  04/13/2026
+Project File Date:  05/10/2026
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keilMDKsoftware\ARM\ARM_Compiler_5.06u7\Bin'
 Build target 'ovwatch'
-compiling mpu6050.c...
-..\code\mpu6050.c(73): warning:  #1-D: last line of file ends without a newline
+compiling ui.c...
+..\code\blood.h(15): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\code\ui.c(373): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  			if(spo2 > 0.0) {
+..\code\ui.c(417): warning:  #1-D: last line of file ends without a newline
   }
-..\code\mpu6050.c: 1 warning, 0 errors
+..\code\ui.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=13888 RO-data=11548 RW-data=80 ZI-data=1440  
+Program Size: Code=19520 RO-data=12360 RW-data=96 ZI-data=9968  
 FromELF: creating hex file...
-"ovwatch\ovwatch.axf" - 0 Error(s), 1 Warning(s).
+"ovwatch\ovwatch.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 

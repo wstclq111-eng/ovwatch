@@ -46,3 +46,6 @@ ovwatch\ui.o: D:\keilMDKsoftware\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
 ovwatch\ui.o: ..\code\mpu6050.h
 ovwatch\ui.o: ../Core/Inc/i2c.h
 ovwatch\ui.o: ..\code\mpu6050_Reg.h
+ovwatch\ui.o: ..\code\blood.h
+ovwatch\ui.o: ..\code\MAX30102.h
+ovwatch\ui.o: ..\code\MAX30102_Reg.h
